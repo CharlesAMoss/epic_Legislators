@@ -4,25 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
     android:padding="40dp"
+    android:background="@android:color/holo_blue_light"
+    android:orientation="vertical"
+    android:weightSum="1"
     >
 
 
     <EditText
         android:id="@+id/zipCode"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="@string/zip_code" />
+        android:layout_width="305dp"
+        android:layout_height="@dimen/notification_large_icon_height"
+        android:hint="@string/zip_code"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        android:textColorHint="@android:color/white"
+        android:singleLine="false"
+        android:textSize="25sp"
+        android:selectAllOnFocus="false"
+         />
 
     <Button
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
         android:id="@+id/buttonSubmit"
         android:onClick="verifyZip"
-        android:text="@string/button_submit" />
+        android:text="@string/button_submit"
+        android:background="@android:color/white"
+        android:textColor="#FF3A8AEC"
+        android:layout_weight="0.00"
+        android:alpha=".8" />
 
 
 </LinearLayout>
