@@ -3,6 +3,7 @@ package example.epic.congress;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 
 public class RepList extends ListActivity {
@@ -10,7 +11,7 @@ public class RepList extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reps_view);
+        setContentView(R.layout.activity_main);
 
         String[] someWords = new String[] {"one", "two", "three"};
 
@@ -18,8 +19,12 @@ public class RepList extends ListActivity {
                 android.R.layout.simple_list_item_1, someWords);
         setListAdapter(arrayAdapter);
 
+
+
     }
 
 
-
 }
+
+
+
