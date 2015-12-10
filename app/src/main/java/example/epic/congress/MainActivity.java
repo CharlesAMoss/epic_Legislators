@@ -1,6 +1,7 @@
 package example.epic.congress;
 
 
+import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,7 +27,7 @@ import java.util.Iterator;
 
 import butterknife.InjectView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ListActivity {
 
     @InjectView(R.id.zipCode) TextView mZipCode;
     private Button mSubmitButton;
@@ -66,6 +67,17 @@ public class MainActivity extends AppCompatActivity {
                                 jsonArray.put(obj.get(key));
                             }
 
+                            for (JSONObject object : jsonArray) {
+                                String name = object.get("first_name").toString();
+                                Log.d("NAME", name);
+                            }
+
+                            // jsonArray to string
+
+                            ArrayAdapter <String> arrayAdapter = new ArrayAdapter<>(this,
+                                    android.R.layout.simple_list_item_1, jsonArray);
+                            setListAdapter(arrayAdapter);
+
 
 
 
@@ -74,8 +86,6 @@ public class MainActivity extends AppCompatActivity {
                         } catch (Throwable t) {
                             Log.d("fuck this shit", "news is bad");
                         }
-
-
 
 
                         Log.d("RESPONSE", responseData);
